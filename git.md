@@ -1,6 +1,32 @@
-터미널과 CLI 관련한 아카이브
+# git
 
-## git
+## clone
+> git 서버에서 최초로 소스를 내려받는 것
+~~~
+mkdir testFolder # 원하는 폴더 생성
+git init # git 설정 초기화
+
+# 받고자 하는 리포지토리 주소(둘 다 가능)
+git clone https://github.com/m0su/Terminal.git
+git clone git@github.com:m0su/Terminal.git
+~~~
+
+## fetch & pull
+> 원격 저장소에서 로컬 저장소로 파일을 가져오기(fetch) + 병합까지(pull)
+### fetch
+- 로컬 브랜치의 헤드는 유지한 채로, origin/master는 원격 저장소의 최신 커밋을 가리킨다.
+- 이전 내용과 원격 저장소에 새로 추가된 내용의 차이를 알 수 있다.
+~~~
+git diff HEAD origin/master # 원래 내용과 새로 추가된 내용의 차이
+git log --decorate --all --oneline # 로컬 브랜치 이후로 커밋이 얼마나 되었는지
+
+git merge origin/master # 병합(fetch로 가져온 이후 pull과 동일한 효과)
+~~~
+### pull
+- 로컬 브랜치와 원격 저장소 origin/master가 같은 위치를 가리킴
+
+
+
 ~~~
 log 옵션
 
