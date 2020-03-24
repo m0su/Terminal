@@ -25,18 +25,50 @@ git merge origin/master # 병합(fetch로 가져온 이후 pull과 동일한 효
 ### pull
 - 로컬 브랜치와 원격 저장소 origin/master가 같은 위치를 가리킴
 
-
-
+## merge
 ~~~
-log 옵션
+git checkout (반영할 브랜치)
 
+git merge (커밋된 브랜치) // 일반 머지
+
+git merge --squash (커밋된 브랜치) // merge and squash
+// squash: 여러 커밋을 합침
+
+git rebase -i HEAD~~ // HEAD부터 ~~(전전) 커밋까지의 히스토리르 변경
+~~~
+
+## commit
+~~~
+# 바로 이전에 커밋한 메시지 바꾸기
+git commit --amend -m "변경하고자 하는 커밋 메시지"
+~~~
+
+## log
+~~~
 git log -(n) // n개의 로그만 보기
 git log --since=1.days // 하루치 로그 보기 (--after/--before)
 git log --grep // 메시지가 일치한 로그보기(대소문자 구분)
-
 ~~~
+### log naming
+- 🚑 fix: 버그 수정: 올바르지 않은 동작
+- ✨ feat : 기능 변경
+- 📚 docs: 문서 변경
+- 🎨 style: 코드형식/정렬/주석 등 변경 → 동작에 영향X
+- add: 코드, 예제, 문서의 추가
+- remove: 코드의 삭제
+- 🚜 refactor: 전면수정
+- 🔬 test: 테스트코드 수정
+- etc: 코드 수정 없이 빌드스크립트, 패키지배포 설정 등
+- update: 원래도 동작은 했었지만 수정,추가,보완 (코드보다는 문서나 리소스, 라이브러리 등)
+- improve: 성능향상(호환성, 테스트커버리지, 접근성 등)
+- make: 기존 동작 변경
+- revise: 문서개정
+- correct: 문법수정(타입변경, 이름변경)
+- rename: 이름 변경
+- verify: 검증코드 삽입
+- set: 변수값 수정등 작은 수정
 
-### 태그
+## 태그
 커밋 메시지, 브랜치와는 독자적으로 커밋에 태그를 붙여 쉽게 관리할 수도 있다.
 ~~~
 // 태그 조회
