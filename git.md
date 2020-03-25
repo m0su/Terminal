@@ -3,7 +3,6 @@
 ## clone
 > git 서버에서 최초로 소스를 내려받는 것
 ~~~
-mkdir testFolder # 원하는 폴더 생성
 git init # git 설정 초기화
 
 # 받고자 하는 리포지토리 주소(둘 다 가능)
