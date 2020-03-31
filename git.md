@@ -114,3 +114,29 @@ git push origin --tags // 모든 태그 올리기
 git tag -d v1.0.0
 git push origin :v1.0.0 // 원격저장소에 올라간 태그 삭제
 ~~~
+
+# Branch 관리
+## 신규 브랜치 생성
+```shell
+# 1번째 방법
+git branch feature-01 master # master branch에서 분기한 feature-01 브랜치 생성
+
+# 2번째 방법
+git checkout -b feature-01 # feature-01 브랜치 생성과 함께 체크아웃
+git push origin feature-01 # 원격 저장소에 push
+git branch --set-upstream-to origin/feature-01 # local과 remote에 각각 있는 브랜치를 연동
+```
+
+## 브랜치명 변경
+```shell
+git branch -m feature-01 feature-001 # feature-01에서 feature-001로 브랜치명 변경
+```
+
+## 브랜치 삭제
+```shell
+git checkout develop
+git branch --delete feature-01
+git branch -D feature-01 # 강제삭제(push되지 않은 commit 등의 이력이 있는 경우)
+
+git push origin :feature-01 # 원격 저장소에 삭제
+```
