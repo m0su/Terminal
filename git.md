@@ -24,17 +24,7 @@ git merge origin/master # 병합(fetch로 가져온 이후 pull과 동일한 효
 ### pull
 - 로컬 브랜치와 원격 저장소 origin/master가 같은 위치를 가리킴
 
-## merge
-~~~
-git checkout (반영할 브랜치)
 
-git merge (커밋된 브랜치) // 일반 머지
-
-git merge --squash (커밋된 브랜치) // merge and squash
-// squash: 여러 커밋을 합침
-
-git rebase -i HEAD~~ // HEAD부터 ~~(전전) 커밋까지의 히스토리르 변경
-~~~
 
 ## add
 ~~~
@@ -134,9 +124,22 @@ git branch -m feature-01 feature-001 # feature-01에서 feature-001로 브랜치
 
 ## 브랜치 삭제
 ```shell
-git checkout develop
+# feature-01 브랜치를 삭제하려면
+git checkout develop # 다른 브랜치로 이동
 git branch --delete feature-01
 git branch -D feature-01 # 강제삭제(push되지 않은 commit 등의 이력이 있는 경우)
 
 git push origin :feature-01 # 원격 저장소에 삭제
 ```
+
+## merge
+~~~
+git checkout (반영할 브랜치)
+
+git merge (커밋된 브랜치) // 일반 머지
+
+git merge --squash (커밋된 브랜치) // merge and squash
+// squash: 여러 커밋을 합침
+
+git rebase -i HEAD~~ // HEAD부터 ~~(전전) 커밋까지의 히스토리르 변경
+~~~
