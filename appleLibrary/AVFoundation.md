@@ -20,15 +20,15 @@
 
 ## Notification
 >AV의 중단, 변경, 리셋 등과 같은 상태변화를 알려준다 (`NSNotification.Name`)
-- interruptionNotification: 오디오 중단
-- routeChangeNotification: 시스템 오디오 라우트 변경
-- silenceSecondaryAudioHintNotification: 다른 앱의 오디오가 시작되거나 중지됨
-- mediaServiceWereLostNotification: 미디어 서버가 중지됨
-- mediaServicesWereResetNotification: 미디어 서버가 재시작
+- `interruptionNotification`: 오디오 중단
+- `routeChangeNotification`: 시스템 오디오 라우트 변경
+- `silenceSecondaryAudioHintNotification`: 다른 앱의 오디오가 시작되거나 중지됨
+- `mediaServiceWereLostNotification`: 미디어 서버가 중지됨
+- `mediaServicesWereResetNotification`: 미디어 서버가 재시작
 
 ## Route
-- currentRoute: 현재 오디오 입출력 라우트
-- preferredInput: 우선되는 오디오 라우트 입력 포트 { set }
+- `currentRoute`: 현재 오디오 입출력 라우트
+- `preferredInput`: 우선되는 오디오 라우트 입력 포트 { set }
 
 
 
