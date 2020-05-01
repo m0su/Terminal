@@ -10,7 +10,7 @@
 - [gitbook](https://melod-it.gitbook.io/sagwa/media/avfoundation/system-audio-interaction/avaudiosession)
 
 |카테고리|음소거|기존 AV차단|input-output|Mode|
-|---|---|---|---|---|
+|-|-|-|-|-|
 |ambient|O|X|output||
 |soloAmbient|O|O|output||
 |playback|X|O/X|output|moviePlayback, spokenAudio, measurement|
