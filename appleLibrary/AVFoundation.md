@@ -11,12 +11,12 @@
 
 |카테고리|음소거|기존 AV차단|input-output|Mode|
 |-|-|-|-|-|-|
-|ambient|O|X|output|
-|soloAmbient|O|O|output|
+|ambient|O|X|output||
+|soloAmbient|O|O|output||
 |playback|X|O/X|output|moviePlayback, spokenAudio, measurement|
 |record|X(잠금화면 녹음만 가능)|O|input|videoRecording, measurement|
 |playAndRecord|X|O/X|input/output|videoRecording, voiceChat, gameChat, videoChat, measurement|
-|multiRoute|X|O|input/output|
+|multiRoute|X|O|input/output||
 
 ## Notification
 >AV의 중단, 변경, 리셋 등과 같은 상태변화를 알려준다 (`NSNotification.Name`)
