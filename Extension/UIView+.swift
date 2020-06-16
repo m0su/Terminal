@@ -4,8 +4,6 @@ enum BorderSide {
 // 선언
 extension UIView {
     func setBorder(color: UIColor = .clear, width: CGFloat = 1, radius: CGFloat = 5, position: BorderSide = .all) {
-        
-        
         // top
         let frameSize = self.frame.size
         var borderRect = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -88,7 +86,22 @@ extension UIView {
             self.layer.insertSublayer($0, at: 0)
         }
     }
+
+    func appear(withDuration duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, options: UIView.AnimationOptions = [], animations: @escaping () -> Void = {}, completion: @escaping ((Bool) -> Void) = { (finished: Bool) -> Void in }) {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
+                self.alpha = 1
+                animations()
+            }, completion: completion)
+        }
+    }
+    
+    func disappear(withDuration duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, options: UIView.AnimationOptions = [], animations: @escaping () -> Void = {}, completion: @escaping ((Bool) -> Void) = { (finished: Bool) -> Void in }) {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
+                self.alpha = 0
+                animations()
+            }, completion: completion)
+        }
+    }
 }
-// 호출
-let view = UIView()
-view.setBorder(color: .white, width: 5, radius: 4, position: .bottom)
